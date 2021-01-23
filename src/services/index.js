@@ -1,8 +1,14 @@
+const path = require('path');
 const express = require('express');
-const app = express();
 const config = require('./config');
 
-app.get('/', (req, res) => {
+
+const app = express();
+app.use(require('serve-static')(config.publicDirectory));
+app.use(require('body-parser').urlencoded({ extended: true }));
+app.use(require('./auth').middleware);
+
+app.get('/login', (req, res) => {
   res.send('Hello World!');
 });
 
