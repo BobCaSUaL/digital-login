@@ -11,7 +11,7 @@ export const defaultInitialState = {
 };
 
 export const LoginForm = (props) => {
-  const { initialState, onLoginRequest } = props;
+  const { initialState, onLoginRequested } = props;
   const [state, setState] = useState(initialState);
 
   const handleUsernameChange = useCallback(
@@ -27,7 +27,7 @@ export const LoginForm = (props) => {
    * each time the state changes, that means mostly every render.
    */
   const handelFormSubmit = (event) => {
-    onLoginRequest(event, state);
+    onLoginRequested(event, state);
     setState(initialState);
   };
 
@@ -63,6 +63,7 @@ export const LoginForm = (props) => {
       </div>
       <Button
         id="login-form--button-login"
+        type="submi"
         variant="outlined"
         color="primary"
       >
@@ -77,7 +78,7 @@ LoginForm.propTypes = {
     username: PropTypes.string,
     password: PropTypes.string,
   }),
-  onLoginRequest: PropTypes.func.isRequired,
+  onLoginRequested: PropTypes.func.isRequired,
 }
 
 LoginForm.defaultProps = {
