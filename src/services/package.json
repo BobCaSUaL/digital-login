@@ -4,6 +4,7 @@
   "description": "This is the server part of the project. Here and only here you could put all the backend stuffs.",
   "main": "index.js",
   "scripts": {
+    "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
