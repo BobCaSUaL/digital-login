@@ -5,7 +5,7 @@ import { StyledLoginForm } from './styled';
 
 export const LoginForm = () => {
   return (
-    <StyledLoginForm>
+    <StyledLoginForm noValidate autoComplete="off">
       <TextField
             required
             id="outlined-required"
