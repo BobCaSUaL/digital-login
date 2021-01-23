@@ -1,6 +1,5 @@
 import React from 'react';
 import {
-  BrowserRouter as Router,
   Switch,
   Route,
 } from "react-router-dom";
@@ -16,12 +15,10 @@ export const AppRouter = () => {
   const { appState } = React.useContext(AppContext);
 
   return (
-    <Router>
-      <Switch>
-        <PrivateRoute exact path="/" component={Header} authed={ appState.isAuthenticated }/>
-        <Route exact path="/login" component={Login} />
-        <Route component={NotFound}  />
-      </Switch>
-    </Router>
+    <Switch>
+      <PrivateRoute exact path="/" component={Header} authed={ appState.isAuthenticated }/>
+      <Route exact path="/login" component={Login} />
+      <Route component={NotFound}  />
+    </Switch>
   )
 }
