@@ -1,11 +1,18 @@
+const path = require('path');
 const express = require('express');
+const config = require('./config');
+
+
 const app = express();
-const port = process.env.DIGITAL_LOGIN_SERVICES_PORT || 3000;
+app.use(require('serve-static')(config.publicDirectory));
+app.use(require('body-parser').urlencoded({ extended: true }));
+app.use(require('./auth').middleware);
 
-app.get('/', (req, res) => {
-  res.send('Hello World!');
-})
+app.get('/login', (req, res) => {
+  res.send(req.user);
+});
 
-app.listen(port, () => {
-  console.log(`Example app listening at http://localhost:${port}`);
-})
+app.listen(config.port, () => {
+  console.log(`Example app listening at http://localhost:${config.port}`);
+  console.log(`configuration ${JSON.stringify(config, null, 2)}`);
+});
