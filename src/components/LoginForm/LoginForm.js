@@ -27,6 +27,7 @@ export const LoginForm = (props) => {
    * each time the state changes, that means mostly every render.
    */
   const handelFormSubmit = (event) => {
+    event.preventDefault();
     onLoginRequested(event, state);
     setState(initialState);
   };
