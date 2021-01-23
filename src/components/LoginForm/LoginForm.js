@@ -6,22 +6,33 @@ import { StyledLoginForm } from './styled';
 
 export const LoginForm = () => {
   return (
-    <StyledLoginForm noValidate autoComplete="off">
-      <TextField
-        required
-        id="outlined-required"
-        label="Required"
-        defaultValue="Hello World"
+    <StyledLoginForm
+      id="login-form"
+      noValidate
+      autoComplete="off"
+    >
+      <div className="form-fields">
+        <TextField
+          id="login-form--input-username"
+          label="Username"
+          autoComplete="username"
+          variant="outlined"
+          required
+        />
+        <TextField
+          id="login-form--input-password"
+          label="Password"
+          type="password"
+          autoComplete="current-password"
+          variant="outlined"
+          required
+        />
+      </div>
+      <Button
+        id="login-form--button-login"
         variant="outlined"
-      />
-      <TextField
-        id="outlined-password-input"
-        label="Password"
-        type="password"
-        autoComplete="current-password"
-        variant="outlined"
-      />
-      <Button variant="outlined" color="primary">
+        color="primary"
+      >
         Login
       </Button>
     </StyledLoginForm>
