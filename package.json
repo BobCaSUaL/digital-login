@@ -41,6 +41,7 @@
     ]
   },
   "devDependencies": {
+    "@emotion/babel-plugin": "^11.1.2",
     "@typescript-eslint/eslint-plugin": "^4.14.0",
     "@typescript-eslint/parser": "^4.14.0",
     "babel-eslint": "^10.1.0",
