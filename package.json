@@ -82,7 +82,8 @@
     "extends": [
       "react-app",
       "react-app/jest"
-    ]
+    ],
+    "plugins": ["@emotion"]
   },
   "browserslist": {
     "production": [
@@ -98,6 +99,7 @@
   },
   "devDependencies": {
     "@emotion/babel-plugin": "^11.1.2",
+    "@emotion/eslint-plugin": "^11.0.0",
     "@typescript-eslint/eslint-plugin": "^4.14.0",
     "@typescript-eslint/parser": "^4.14.0",
     "babel-eslint": "^10.1.0",
@@ -164,6 +166,7 @@
   "babel": {
     "presets": [
       "react-app"
-    ]
+    ],
+    "plugins": ["@emotion"]
   }
 }
