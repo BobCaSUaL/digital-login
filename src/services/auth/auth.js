@@ -28,7 +28,8 @@ passport.use(new BearerStrategy(
     if (!user) {
       return done(null, false);
     }
-    return done(null, user, { scope: 'all' });
+    const { password, ...celanedUser } = user;
+    return done(null, celanedUser, { scope: 'all' });
   }
 ));
 

@@ -9,7 +9,7 @@ app.use(require('body-parser').urlencoded({ extended: true }));
 app.use(require('./auth').middleware);
 
 app.get('/login', (req, res) => {
-  res.send('Hello World!');
+  res.send(req.user);
 });
 
 app.listen(config.port, () => {
