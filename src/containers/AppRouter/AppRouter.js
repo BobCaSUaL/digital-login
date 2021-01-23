@@ -7,9 +7,9 @@ import {
 
 import PrivateRoute from '../../components/PrivateRoute';
 import Header from '../../components/Header';
-import LoginForm from '../../components/LoginForm';
 
 import { AppContext } from '../App';
+import Login from '../Login';
 import NotFound from '../NotFound';
 
 export const AppRouter = () => {
@@ -19,7 +19,7 @@ export const AppRouter = () => {
     <Router>
       <Switch>
         <PrivateRoute exact path="/" component={Header} authed={ appState.isAuthenticated }/>
-        <Route exact path="/login" component={LoginForm} />
+        <Route exact path="/login" component={Login} />
         <Route component={NotFound}  />
       </Switch>
     </Router>
