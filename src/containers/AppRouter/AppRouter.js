@@ -5,9 +5,9 @@ import {
 } from "react-router-dom";
 
 import PrivateRoute from '../../components/PrivateRoute';
-import Header from '../../components/Header';
 
 import { AppContext } from '../App';
+import LandingPage from '../LandingPage';
 import Login from '../Login';
 import NotFound from '../NotFound';
 
@@ -16,7 +16,7 @@ export const AppRouter = () => {
 
   return (
     <Switch>
-      <PrivateRoute exact path="/" component={Header} authed={ appState.isAuthenticated }/>
+      <PrivateRoute exact path="/" component={LandingPage} authed={ appState.isAuthenticated }/>
       <Route exact path="/login" component={Login} />
       <Route component={NotFound}  />
     </Switch>
