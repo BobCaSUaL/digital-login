@@ -36,10 +36,17 @@ export const saga = {
     }
   },
 
+  async onLoginFailed(action, dispatch) {
+    alert('Login failed');
+  },
+
   async processAction(action, dispatch) {
     switch (action.type) {
       case actionTypes.LOGIN_REQUESTED:
         await this.onLoginRequested(action, dispatch);
+        break;
+      case actionTypes.LOGIN_FAILED:
+        await this.onLoginFailed(action, dispatch);
         break;
     }
     if (action.meta && action.meta.redirectTo) {
