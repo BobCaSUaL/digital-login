@@ -1,11 +1,12 @@
 import PropTypes from 'prop-types';
 import logo from './logo.svg';
-import './style.css';
+
+import { StyledHeader } from './styled';
 
 export const Header = (props) => {
   const { children } = props;
   return (
-  <header className="header">
+  <StyledHeader>
     <img src={logo} className="logo" alt="logo" />
     {children}
     <a
@@ -16,7 +17,7 @@ export const Header = (props) => {
     >
       Learn React
     </a>
-  </header>
+  </StyledHeader>
   );
 }
 
