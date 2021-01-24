@@ -10,9 +10,9 @@ export const Login = (props) => {
   const handleLoginRequested = useCallback(
     (event, credentials) => {
       appDispatch({
-        type: appActionTypes.LOGIN,
+        type: appActionTypes.LOGIN_REQUESTED,
         payload: credentials,
-        meta: { redirectTo: '/' },
+        meta: { $onSuccess: { redirectTo: '/' } },
       })
     },
     [appDispatch],

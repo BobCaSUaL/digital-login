@@ -9,13 +9,16 @@ export const initialState = {
 };
 
 export const actionTypes = {
-  LOGIN: '/digital/actions/LOGIN',
+  $REDIRECT_TO: '$REDIRECT_TO', // special action to request routing redirect
+  LOGIN_REQUESTED: '/digital/actions/LOGIN_REQUESTED',
+  LOGIN_SUCCEEDED: '/digital/actions/LOGIN_SUCCEEDED',
+  LOGIN_FAILED: '/digital/actions/LOGIN_FAILED',
   LOGOUT: '/digital/actions/LOGOUT',
 };
 
 export const reducer = (state, action) => {
   switch (action.type) {
-    case actionTypes.LOGIN:
+    case actionTypes.LOGIN_SUCCEEDED:
       return {
         ...state,
         isAuthenticated: true,
